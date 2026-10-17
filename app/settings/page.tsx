@@ -1,0 +1,9 @@
+// app/settings/page.tsx
+export default function SettingsPage() {
+  return (
+    <main>
+      <h1>Settings</h1>
+      <p>This is the Settings page. Configure your preferences here.</p>
+    </main>
+  );
+}
