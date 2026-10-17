@@ -16,9 +16,36 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
+- `app/` — Next.js App Router pages
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `page.tsx` — Home page
+
+- `about/page.tsx` — About page
+
+- `dashboard/page.tsx` — Dashboard placeholder
+
+- `settings/page.tsx` — Settings placeholder
+
+- `health/page.tsx` — Health check (fetches data from API)
+
+- `components/` — Shared UI components (e.g. Nav.tsx)
+
+- `styles/` — Global styles
+
+## Environment Variables
+This project uses environment variables for configuration.
+
+```bash
+1. Copy .env.example to .env.local:
+```
+2. Update `.env.local` with your real values.
+
+3. On Vercel, set the same variables under **Project → Settings → Environment Variables**.
+
+⚠️ Never commit `.env.local.` Only `.env.example` is tracked.
+
+
 
 ## Learn More
 
