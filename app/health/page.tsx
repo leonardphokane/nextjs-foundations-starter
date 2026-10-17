@@ -1,14 +1,18 @@
-// app/health/page.tsx
-export default async function HealthPage() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/posts/1`, {
-    cache: "no-store",   // ensures runtime fetch
-  });
-  const data = await res.json();
+import { Suspense } from "react";
 
+async function HealthContent() {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/posts/1`, { cache: "no-store" });
+  const data = await res.json();
+  return <pre>{JSON.stringify(data, null, 2)}</pre>;
+}
+
+export default function HealthPage() {
   return (
     <main>
       <h1>Health Check</h1>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+      <Suspense fallback={<p>Loading...</p>}>
+        <HealthContent />
+      </Suspense>
     </main>
   );
 }
